@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const invoiceController = require('../controllers/invoice')
 
-router.get('/invoice/:id', invoiceController.get_booking_recent_invoice)
+router.get('/:id', invoiceController.get_booking_recent_invoice)
 
 
 
