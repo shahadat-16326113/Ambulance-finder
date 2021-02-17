@@ -4,7 +4,7 @@ const Review = require('../models/review')
 exports.get_user_driver_review = (req, res) => {
     
     Review
-      .findById(...req.params)
+      .findById({...req.params})
       .then(() => {
         res.json({ message: 'All Review' })
       })

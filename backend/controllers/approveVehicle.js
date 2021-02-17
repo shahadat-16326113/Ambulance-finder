@@ -4,7 +4,7 @@ const  Vehicle = require('../models/vehicle')
 exports.get_approve_vehicle_list = (req, res) => {
     
     Vehicle
-      .findById(...req.params)
+      .findById({...req.params})
       .then(() => {
         res.json({ message: 'All Approve Vehicle' })
       })
@@ -34,7 +34,7 @@ exports.approve_vehicle = (req, res) => {
 exports.reject_vehicle = (req, res) => {
 
     Vehicle
-      .findByIdAndDelete(...req.params)
+      .findByIdAndDelete({...req.params})
       .then(() => {
         res.json({ message: 'Reject Vehicle' })
       })
@@ -42,3 +42,4 @@ exports.reject_vehicle = (req, res) => {
         console.log(err)
       })
 }
+
